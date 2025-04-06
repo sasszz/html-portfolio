@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Delikaat";
+  src: url("Delikaat_W00_Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VT323";
+  src: url("./VT323-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: "Delikaat", sans-serif;
+}
+
+body {
+  background-image: url("./laptop.jpg");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  background-attachment: fixed;
+  font-family: "VT323", monospace;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+
+.text-outline-hover:hover {
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 10s linear infinite;
+}
