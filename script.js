@@ -20,7 +20,11 @@ fetch(apiUrl)
   .then((response) => response.json())
   .then((users) => {
     const container = document.getElementById("followers-grid");
-    users.slice(0, 8).forEach((user) => {
+
+    const isMobile = window.innerWidth < 640;
+    const limit = isMobile ? 4 : 8;
+
+    users.slice(0, limit).forEach((user) => {
       const card = document.createElement("a");
       card.href = user.html_url;
       card.target = "_blank";
@@ -28,9 +32,9 @@ fetch(apiUrl)
       card.className = "flex flex-col items-center";
 
       card.innerHTML = `
-          <img src="${user.avatar_url}" alt="${user.login}" class="w-32 h-32">
-          <p class="text-sm">${user.login}</p>
-        `;
+        <img src="${user.avatar_url}" alt="${user.login}" class="w-32 h-32 rounded-full border-[3px] border-black">
+        <p class="text-sm mt-2">${user.login}</p>
+      `;
 
       container.appendChild(card);
     });
