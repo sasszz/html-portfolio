@@ -49,10 +49,26 @@ audio.volume = 0.5;
 toggleBtn.addEventListener("click", () => {
   if (isPlaying) {
     audio.pause();
-    icon.src = "mute.svg";
+    icon.src = "./assets/imgs/mute.svg";
   } else {
     audio.play();
-    icon.src = "sound.svg";
+    icon.src = "./assets/imgs/sound.svg";
   }
   isPlaying = !isPlaying;
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const blocks = document.querySelectorAll(".timeline__block");
+
+  const revealOnScroll = () => {
+    blocks.forEach((block) => {
+      const rect = block.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.85) {
+        block.classList.add("show");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll(); // run once on load
 });

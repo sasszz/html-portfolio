@@ -1,15 +1,19 @@
 @font-face {
   font-family: "Delikaat";
-  src: url("Delikaat_W00_Bold.ttf") format("truetype");
+  src: url("./assets/fonts/Delikaat_W00_Bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "VT323";
-  src: url("./VT323-Regular.ttf") format("truetype");
+  src: url("./assets/fonts/VT323-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 h1 {
@@ -17,7 +21,7 @@ h1 {
 }
 
 body {
-  background-image: url("./laptop.jpg");
+  background-image: url("./assets/imgs/laptop.jpg");
   background-repeat: repeat;
   background-size: 200px 200px;
   background-attachment: fixed;
@@ -44,4 +48,47 @@ body {
   display: flex;
   width: max-content;
   animation: marquee 10s linear infinite;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ccc;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  width: 50%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-item .content {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  display: inline-block;
 }
