@@ -20,11 +20,17 @@ fetch(apiUrl)
   .then((response) => response.json())
   .then((users) => {
     const container = document.getElementById("followers-grid");
-
     const isMobile = window.innerWidth < 640;
     const limit = isMobile ? 4 : 8;
 
-    users.slice(0, limit).forEach((user) => {
+    const limitedUsers = users.slice(0, limit);
+
+    if (limitedUsers.length === 0) {
+      container.innerHTML = `<p class="col-span-full text-center text-gray-600">No followers found.</p>`;
+      return;
+    }
+
+    limitedUsers.forEach((user) => {
       const card = document.createElement("a");
       card.href = user.html_url;
       card.target = "_blank";
@@ -40,6 +46,8 @@ fetch(apiUrl)
     });
   })
   .catch((error) => {
+    const container = document.getElementById("followers-grid");
+    container.innerHTML = `<p class="col-span-full">Failed to load followers.</p>`;
     console.error("Failed to load following list:", error);
   });
 

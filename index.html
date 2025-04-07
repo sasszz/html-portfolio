@@ -129,10 +129,10 @@
             <div class="bg-black text-white w-full p-1">
               <p>Hackathons</p>
             </div>
-            <div class="flex flex-row gap-2 p-4">
+            <div class="flex flex-row gap-2 p-4 items-center justify-center">
               <a
                 href="https://github.com/tinalr/recipebox-gdihackathon2022"
-                class="w-1/2 hover:scale-110 hover:opacity-100 opacity-90"
+                class="w-1/2 hover:scale-110 hover:opacity-100 opacity-90 max-w-32"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -144,7 +144,7 @@
               </a>
               <a
                 href="https://github.com/sasszz/classroom-connect-mern"
-                class="w-1/2 hover:scale-110 hover:opacity-100 opacity-90"
+                class="w-1/2 hover:scale-110 hover:opacity-100 opacity-90 max-w-32"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -498,13 +498,21 @@
               class="p-4 flex flex-col lg:flex-row items-center justify-center gap-2"
             >
               <div class="flex flex-row lg:flex-col">
-                <video
+                <iframe
+                  class="lg:min-w-[300px] aspect-video xl:min-w-[500px] w-full border-[3px] border-black rounded"
+                  src="https://www.youtube.com/embed/0M4zGJ6DFok"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+                <!-- <video
                   controls
                   class="lg:min-w-[300px] xl:min-w-[500px] w-full border-[3px] border-black rounded"
                 >
                   <source src="./assets/videos/video.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
-                </video>
+                </video> -->
               </div>
               <div class="flex flex-col">
                 <p>transcript</p>
