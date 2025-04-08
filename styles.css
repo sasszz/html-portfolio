@@ -45,3 +45,65 @@ body {
   width: max-content;
   animation: marquee 10s linear infinite;
 }
+
+.typewriter {
+  overflow: hidden;
+  border-right: 0.15em solid #4af626;
+  white-space: nowrap;
+  margin: 0;
+  text-align: left;
+  letter-spacing: 0.15em;
+  width: 0;
+  opacity: 0;
+  animation: fade-in 0.1s ease forwards, typing 3.5s steps(40, end) forwards,
+    blink-caret 0.75s step-end infinite, remove-caret 0.1s forwards;
+}
+
+.delay-0 {
+  animation-delay: 0s, 0s, 0s, 3.5s;
+}
+.delay-1 {
+  animation-delay: 3.6s, 3.6s, 3.6s, 7.1s;
+}
+.delay-2 {
+  animation-delay: 7.2s, 7.2s, 7.2s, 10.7s;
+}
+
+.delay-3 {
+  animation-delay: 10.8s, 10.8s, 10.8s, 10.7s;
+}
+
+/* Fade in text */
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Cursor blink */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #4af626;
+  }
+}
+
+/* Remove cursor after typing done */
+@keyframes remove-caret {
+  to {
+    border-right: none;
+  }
+}

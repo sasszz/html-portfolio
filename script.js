@@ -1,3 +1,11 @@
+const today = new Date();
+const formattedDate = today.toLocaleDateString("en-US"); // MM/DD/YYYY
+const lastLoginEl = document.getElementById("last-login");
+
+if (lastLoginEl) {
+  lastLoginEl.textContent = `Last login: ${formattedDate}`;
+}
+
 const username = "sasszz";
 
 fetch(`https://api.github.com/users/${username}`)
