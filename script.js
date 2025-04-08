@@ -92,3 +92,24 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", revealOnScroll);
   revealOnScroll(); // run once on load
 });
+
+const projectUrls = [
+  "https://www.youtube.com/embed/VOlYHY0c_cM",
+  "https://www.youtube.com/embed/uvFWDvMrdOI",
+  "https://www.youtube.com/embed/9gsvTaoNp78",
+  "https://www.youtube.com/embed/1XbPDIqSQ8g",
+  
+];
+
+let currentIndex = 0;
+const iframe = document.getElementById("projectFrame");
+
+document.getElementById("prevBtn").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + projectUrls.length) % projectUrls.length;
+  iframe.src = projectUrls[currentIndex];
+});
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % projectUrls.length;
+  iframe.src = projectUrls[currentIndex];
+});

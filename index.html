@@ -608,12 +608,59 @@
           </div>
           <div
             id="projects"
-            class="w-full border-[3px] border-black bg-white h-96 mb-32 lg:mb-none"
+            class="w-full border-[3px] border-black bg-white mb-32 lg:mb-none"
           >
             <div class="bg-black text-white w-full p-1">
               <p>Projects</p>
             </div>
-            <div class="p-4"><p>coming soon...</p></div>
+
+            <div class="flex items-center justify-center gap-4 p-12">
+              <button
+                id="prevBtn"
+                class="px-4 py-2 border border-black border-[3px] rounded hover:bg-gray-200"
+              >
+                <img
+                  id="caret-icon"
+                  src="./assets/imgs/caret.svg"
+                  alt="caret Icon"
+                  class="w-4 -scale-x-100"
+                />
+              </button>
+
+              <div class="flex-1 flex justify-center">
+                <iframe
+                  id="projectFrame"
+                  class="lg:w-[400px] aspect-video w-full border-[3px] border-black rounded"
+                  src="https://www.youtube.com/embed/1XbPDIqSQ8g"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <button
+                id="nextBtn"
+                class="px-4 py-2 border border-black border-[3px] rounded hover:bg-gray-200"
+              >
+                <img
+                  id="caret-icon"
+                  src="./assets/imgs/caret.svg"
+                  alt="caret Icon"
+                  class="w-4"
+                />
+              </button>
+            </div>
+            <!-- <div class="flex items-center justify-center p-12">
+              <iframe
+                class="lg:w-[400px] aspect-video w-full border-[3px] border-black rounded"
+                src="https://www.youtube.com/embed/1XbPDIqSQ8g"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div> -->
           </div>
         </div>
       </div>
