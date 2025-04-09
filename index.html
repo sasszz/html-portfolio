@@ -93,7 +93,7 @@
               <p class="typewriter delay-3">Deployed to Github Pages.</p>
             </div>
           </div>
-          <div class="w-full border-[3px] border-black bg-white">
+          <div class="w-full border-[3px] border-black bg-white px-4">
             <a
               href="https://github.com/sasszz/html-portfolio"
               target="_blank"
@@ -106,7 +106,7 @@
                 alt="github Icon"
                 class="w-8 h-8"
               />
-              <p>View the Source Code</p>
+              <p>View this Page's Source Code</p>
             </a>
           </div>
           <div class="w-full border-[3px] border-black bg-white">
@@ -613,54 +613,40 @@
             <div class="bg-black text-white w-full p-1">
               <p>Projects</p>
             </div>
-
-            <div class="flex items-center justify-center gap-4 p-12">
-              <button
-                id="prevBtn"
-                class="px-4 py-2 border border-black border-[3px] rounded hover:bg-gray-200"
-              >
-                <img
-                  id="caret-icon"
-                  src="./assets/imgs/caret.svg"
-                  alt="caret Icon"
-                  class="w-4 -scale-x-100"
-                />
-              </button>
-
-              <div class="flex-1 flex justify-center">
-                <iframe
-                  id="projectFrame"
-                  class="lg:w-[400px] aspect-video w-full border-[3px] border-black rounded"
-                  src="https://www.youtube.com/embed/1XbPDIqSQ8g"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
+            <div class="flex items-start justify-start gap-4 p-4">
+              <div class="flex flex-col justify-center items-center gap-4">
+                <div
+                  class="flex flex-row items-center justify-center gap-4 w-full"
+                >
+                  <button
+                    id="prevBtn"
+                    class="px-4 border-black border-[3px] hover:bg-gray-300 rounded bg-gray-400"
+                  >
+                    Prev
+                  </button>
+                  <button
+                    id="nextBtn"
+                    class="px-4 border-black border-[3px] hover:bg-gray-300 rounded bg-[#5cb4f0]"
+                  >
+                    Next
+                  </button>
+                </div>
+                <div class="flex flex-row w-full">
+                  <iframe
+                    id="projectFrame"
+                    class="aspect-video w-full border-[3px] border-black rounded"
+                    src="https://www.youtube.com/embed/1XbPDIqSQ8g"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div id="projectInfo" class="flex flex-row text-center">
+                  <!-- This will be filled with JS -->
+                </div>
               </div>
-
-              <button
-                id="nextBtn"
-                class="px-4 py-2 border border-black border-[3px] rounded hover:bg-gray-200"
-              >
-                <img
-                  id="caret-icon"
-                  src="./assets/imgs/caret.svg"
-                  alt="caret Icon"
-                  class="w-4"
-                />
-              </button>
             </div>
-            <!-- <div class="flex items-center justify-center p-12">
-              <iframe
-                class="lg:w-[400px] aspect-video w-full border-[3px] border-black rounded"
-                src="https://www.youtube.com/embed/1XbPDIqSQ8g"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div> -->
           </div>
         </div>
       </div>

@@ -93,23 +93,103 @@ document.addEventListener("DOMContentLoaded", () => {
   revealOnScroll(); // run once on load
 });
 
-const projectUrls = [
-  "https://www.youtube.com/embed/VOlYHY0c_cM",
-  "https://www.youtube.com/embed/uvFWDvMrdOI",
-  "https://www.youtube.com/embed/9gsvTaoNp78",
-  "https://www.youtube.com/embed/1XbPDIqSQ8g",
-  
+// const projectUrls = [
+//   "https://www.youtube.com/embed/uvFWDvMrdOI",
+//   "https://www.youtube.com/embed/9gsvTaoNp78",
+//   "https://www.youtube.com/embed/1XbPDIqSQ8g",
+// ];
+
+const projects = [
+  {
+    videoUrl: "https://www.youtube.com/embed/uvFWDvMrdOI",
+    title: "Integer Calculator Terminal Program",
+    techStack: "Xcode, Assembly Language, Stack_8e Emulator",
+    description:
+      "An integer calculator in Stack_8e assembly that uses IO routines to clear, add, subtract, and optionally multiply/divide a memory variable via user input.",
+    sourceCode:
+      "https://github.com/sasszz/spring-classes-gcc-2024/tree/main/CS166/labs/lab2",
+  },
+  {
+    videoUrl: "https://www.youtube.com/embed/9gsvTaoNp78",
+    title: "Habit Tracker Web Program",
+    techStack:
+      "React, Next.js, TailwindCSS, TypeScript, Apollo, GraphQL, SQLite",
+    description:
+      "Built a responsive React/Next.js frontend featuring a retractable sidebar, dynamic page routing, an email subscription form with validation, unit testing with Jest, and real-time display of saved emails using Apollo Client.",
+    sourceCode: "https://github.com/sasszz/habithero",
+  },
+  {
+    videoUrl: "https://www.youtube.com/embed/1XbPDIqSQ8g",
+    title: "Self-Custody Crypto Wallet",
+    techStack:
+      "React, TypeScript, TailwindCSS, Node.js, Express, MongoDB, Etherscan API",
+    description:
+      "Built a crypto wallet with mnemonic secret key generation and login, QR code wallet address, ETH/USD balance, and transaction history via Etherscan.",
+    sourceCode: "https://github.com/sasszz/not-coinbase-wallet-",
+  },
+  {
+    videoUrl: "https://www.youtube.com/embed/dYkyHfnVZXo ",
+    title: "GDI Hackathon - Note to Chef",
+    techStack:
+      "React, Javascript, TailwindCSS",
+    description:
+      "Note to Chef is a tool to assist with planning for a variety of dietary needs by curating a collection of recipes that accommodates the user's requested dietary preferences.",
+    sourceCode: "https://github.com/tinalr/recipebox-gdihackathon2022",
+  },
+  {
+    videoUrl: "https://www.youtube.com/embed/2uBh8MiG7jk ",
+    title: "GDI Hackathon - ClassConnect",
+    techStack:
+      "React, Javascript, Vite, TailwindCSS, NodeJS, MongoDB, Express",
+    description:
+      "ClassConnect is a fullstack MERN application designed to enhance classroom engagement by enabling real-time video conferencing and collaboration, giving teachers and students an interactive virtual space for remote learning.",
+    sourceCode: "https://github.com/sasszz/classroom-connect-mern",
+  },
 ];
 
-let currentIndex = 0;
-const iframe = document.getElementById("projectFrame");
+let currentProjectIndex = 0;
 
+function updateProject(index) {
+  const project = projects[index];
+  const iframe = document.getElementById("projectFrame");
+  const infoDiv = document.getElementById("projectInfo");
+
+  iframe.src = project.videoUrl;
+
+  infoDiv.innerHTML = `
+    <div class="flex flex-col gap-4 items-center justify-center">
+      <h2 class="font-semibold">${project.title}</h2>
+      <p><strong>Tech Stack:</strong> ${project.techStack}</p>
+      <p class="text-sm tracking-tight">${project.description}</p>
+      <a
+        href=${project.sourceCode}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex flex-row items-center gap-4 hover:scale-110"
+      >
+        <img
+          id="github-icon"
+          src="./assets/imgs/githhub.png"
+          alt="github Icon"
+          class="w-8 h-8"
+        />
+        <p>View the Source Code</p>
+      </a>
+    </div>
+  `;
+}
+
+// Initial render
+updateProject(currentProjectIndex);
+
+// Navigation buttons
 document.getElementById("prevBtn").addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + projectUrls.length) % projectUrls.length;
-  iframe.src = projectUrls[currentIndex];
+  currentProjectIndex =
+    (currentProjectIndex - 1 + projects.length) % projects.length;
+  updateProject(currentProjectIndex);
 });
 
 document.getElementById("nextBtn").addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % projectUrls.length;
-  iframe.src = projectUrls[currentIndex];
+  currentProjectIndex = (currentProjectIndex + 1) % projects.length;
+  updateProject(currentProjectIndex);
 });
