@@ -193,3 +193,15 @@ document.getElementById("nextBtn").addEventListener("click", () => {
   currentProjectIndex = (currentProjectIndex + 1) % projects.length;
   updateProject(currentProjectIndex);
 });
+
+
+const diplomaToggleBtn = document.getElementById('toggleDiplomaBtn');
+const diplomaImage = document.getElementById('diplomaImage');
+
+const images = ['./assets/imgs/diploma.jpeg', './assets/imgs/dojo.jpeg'];
+let currentIndex = 0;
+
+diplomaToggleBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  diplomaImage.src = images[currentIndex];
+});
